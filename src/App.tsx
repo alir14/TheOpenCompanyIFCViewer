@@ -1,14 +1,28 @@
 import React from 'react';
 import ModelLoader from './example';
 import ModelViewer from './example2';
+import CudeModel from './example3';
+import My3DComponent from './example4';
+import CliperExample from './exampleClipper';
+import ExampleIFCLoader from './exampleIFCLoader';
+import ExampleItemSelect from './exampleItemSelect';
+import ExampleValueMeasurement from './exampleValueMeasurement';
+import ComponentExample from './componentExample';
+import RelationTreeExample from './relationTreeExample';
 
 const App: React.FC = () => {
     return (
         <div>
-            Hello from React and TypeScript!
             {/* <ModelLoader /> */}
-            <ModelViewer />
-
+            {/* <ModelViewer /> */}
+            {/* <CudeModel /> */}
+            {/* <My3DComponent /> */}
+            {/* <CliperExample /> */}
+            {/* <ExampleIFCLoader /> */}
+            {/* <ExampleItemSelect /> */}
+            {/* <ExampleValueMeasurement /> */}
+            <RelationTreeExample />
+            
         </div>
     );
 };
