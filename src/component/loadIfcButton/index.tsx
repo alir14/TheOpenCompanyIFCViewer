@@ -5,7 +5,6 @@ import * as FRAGS from "@thatopen/fragments";
 interface LoadIfcButtonProps {
     label?: string;
     ifcLoader: OBC.IfcLoader;
-    world: OBC.SimpleWorld<OBC.SimpleScene, OBC.SimpleCamera, OBC.SimpleRenderer>
     handleOnModelLoaded: (model: FRAGS.FragmentsGroup) => void;
 }
 
@@ -13,7 +12,6 @@ const LoadIfcButton: React.FC<LoadIfcButtonProps> = (
     {
         label = "Load IFC",
         ifcLoader,
-        world,
         handleOnModelLoaded
     }
 ) => {
@@ -36,7 +34,6 @@ const LoadIfcButton: React.FC<LoadIfcButtonProps> = (
         try {
             const model = await ifcLoader.load(data, true, fileName);
             model.name = file.name || "example";
-            world.scene.three.add(model);
             handleOnModelLoaded(model);
             console.log(`Successfully loaded: ${fileName}`);
         } catch (error) {

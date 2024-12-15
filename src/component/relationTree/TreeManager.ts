@@ -76,12 +76,12 @@ const getDecompositionTree = async (
 };
 
 export const computeRowData = async (
-    indexer: OBC.IfcRelationsIndexer,
+    components: OBC.Components,
     models: Iterable<FRAGS.FragmentsGroup>,
     inverseAttributes: OBC.InverseAttribute[],
     expressID?: number,
 ) => {
-    // const indexer = components.get(OBC.IfcRelationsIndexer);
+    const indexer = components.get(OBC.IfcRelationsIndexer);
     const rows: BUI.TableGroupData[] = [];
     for (const model of models) {
 
@@ -125,16 +125,13 @@ export const computeRowData = async (
     return rows;
 };
 
-export const getRowFragmentIdMap = (components: OBC.Components, rowData: any) => {
-    const fragments = components.get(OBC.FragmentsManager);
+export const getRowFragmentIdMap = (model: FRAGS.FragmentsGroup, 
+    rowData: any) => {
     const { modelID, expressID, relations } = rowData as {
         modelID: string;
         expressID: number;
         relations: string;
     };
-    if (!modelID) return null;
-    const model = fragments.groups.get(modelID);
-    if (!model) return null;
     const fragmentIDMap = model.getFragmentMap([
         expressID,
         ...JSON.parse(relations ?? "[]"),

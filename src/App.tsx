@@ -9,6 +9,8 @@ import ExampleItemSelect from './exampleItemSelect';
 import ExampleValueMeasurement from './exampleValueMeasurement';
 import ComponentExample from './componentExample';
 import RelationTreeExample from './relationTreeExample';
+import TreeViewComponent from './component/relationTree/treeViewComponent';
+import ModelComponentRelations from './modelComponentRelations';
 
 const App: React.FC = () => {
     return (
@@ -21,8 +23,9 @@ const App: React.FC = () => {
             {/* <ExampleIFCLoader /> */}
             {/* <ExampleItemSelect /> */}
             {/* <ExampleValueMeasurement /> */}
+            {/* {<ModelComponentRelations />} */}
             <RelationTreeExample />
-            
+
         </div>
     );
 };

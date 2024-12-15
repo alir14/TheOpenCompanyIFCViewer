@@ -14,7 +14,7 @@ const ModelLoader = () => {
             const buffer = new Uint8Array(data);
             await loader.setup();
             const model = await loader.load(buffer);
-            console.log(model);
+            console.log(`${model.uuid} is loaded`);
         };
 
         loadModel();

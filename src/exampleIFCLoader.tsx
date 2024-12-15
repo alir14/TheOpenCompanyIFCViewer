@@ -68,7 +68,7 @@ const ExampleIFCLoader: React.FC = () => {
             }
 
             fragments.onFragmentsLoaded.add((model) => {
-                console.log(model);
+                console.log("is it even being called");
             });
 
             const disposeFragments = () => {
