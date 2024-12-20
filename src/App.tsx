@@ -11,6 +11,7 @@ import ComponentExample from './componentExample';
 import RelationTreeExample from './relationTreeExample';
 import TreeViewComponent from './component/relationTree/treeViewComponent';
 import ModelComponentRelations from './modelComponentRelations';
+import ExampleHiderComponent from './exampleHiderComponent';
 
 const App: React.FC = () => {
     return (
@@ -24,7 +25,8 @@ const App: React.FC = () => {
             {/* <ExampleItemSelect /> */}
             {/* <ExampleValueMeasurement /> */}
             {/* {<ModelComponentRelations />} */}
-            <RelationTreeExample />
+            {/* <RelationTreeExample /> */}
+            <ExampleHiderComponent />
 
         </div>
     );
