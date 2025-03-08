@@ -12,6 +12,12 @@ import RelationTreeExample from './relationTreeExample';
 import TreeViewComponent from './component/relationTree/treeViewComponent';
 import ModelComponentRelations from './modelComponentRelations';
 import ExampleHiderComponent from './exampleHiderComponent';
+import ExampleMeasurement from './exampleMeasurement';
+import OrthoPerspectiveCameraApp from './exampleCamera';
+import ClassificationsTreeComponent from './classifier/classifierExample';
+import IFCConsoleViewer from './elementPropertiesConsoleApp';
+import ElementPropertiesComponent from './elementProperties';
+import IfcJsonExporter from './IfcJsonExporter';
 
 const App: React.FC = () => {
     return (
@@ -26,7 +32,13 @@ const App: React.FC = () => {
             {/* <ExampleValueMeasurement /> */}
             {/* {<ModelComponentRelations />} */}
             {/* <RelationTreeExample /> */}
-            <ExampleHiderComponent />
+            {/* <ExampleHiderComponent /> */}
+            {/* <ExampleMeasurement /> */}
+            {/* <OrthoPerspectiveCameraApp /> */}
+            {/* <ClassificationsTreeComponent /> */}
+            {/* <IFCConsoleViewer /> */}
+            {/* <ElementPropertiesComponent /> */}
+            <IfcJsonExporter />
 
         </div>
     );

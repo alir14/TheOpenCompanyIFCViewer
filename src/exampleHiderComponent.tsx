@@ -12,7 +12,7 @@ const ExampleHiderComponent = () => {
     const [hider, setHider] = useState<OBC.Hider>();
     const [model, setModel] = useState<FRAGS.FragmentsGroup>();
     const [classifier, setClassifier] = useState<OBC.Classifier>();
-    const [fragmentsMngr, setFragmentsManager] = useState<OBC.FragmentsManager>();
+    const [fragMgr, setFragmentsManager] = useState<OBC.FragmentsManager>();
     const [indx, setIndexer] = useState<OBC.IfcRelationsIndexer>();
 
     const components = new OBC.Components();
@@ -105,18 +105,20 @@ const ExampleHiderComponent = () => {
         setSpatialStructures(updatedMap);
 
         if (hider) {
-            console.log("key", key)
+            console.log("key", key);
 
             const found = classifier.list.spatialStructures[key];
+
+            console.log("found", found);
             if (found && found.id !== null) {
-                for (const [_id, model] of fragmentsMngr.groups) {
+                for (const [_id, model] of fragMgr.groups) {
                     const foundIDs = indx.getEntityChildren(model, found.id);
                     const fragMap = model.getFragmentMap(foundIDs);
+                    
+                    console.log("fragMap", fragMap);
                     hider.set(isVisible, fragMap);
                 }
             }
-            console.log("found", found)
-            hider.set
         }
     }
 
@@ -125,7 +127,7 @@ const ExampleHiderComponent = () => {
         updatedMap[key] = isVisible;
 
         setCategories(updatedMap);
-        
+
         if (hider) {
             console.log("key", key)
 
