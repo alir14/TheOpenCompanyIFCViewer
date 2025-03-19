@@ -74,6 +74,18 @@ const IfcJsonExporter: React.FC<RelationTreeProps> = ({
         });
     }
 
+    const getElementQuantity = (elementMetadata: ElementNode[]) => {
+        let quantity = 0;
+        elementMetadata.forEach((element) => {
+            quantity++;
+            if (element.children && element.children.length > 0) {
+                quantity += getElementQuantity(element.children);
+                element.quantity = element.children.length;
+            }
+        });
+        return quantity;
+    }
+
     useEffect(() => {
         let isLoaingInprogress = true;
 
@@ -135,7 +147,7 @@ const IfcJsonExporter: React.FC<RelationTreeProps> = ({
             await webIfc.Init();
 
             await ifcLoader.setup();
-            const file = await fetch("https://thatopen.github.io/engine_components/resources/small.ifc");
+            const file = await fetch("https://psiassetsapidev.blob.core.windows.net/ifcfiles/ifcBridgeSample.ifc"); //https://thatopen.github.io/engine_components/resources/small.ifc
             const buffer = await file.arrayBuffer();
 
             const typedArray = new Uint8Array(buffer);
@@ -159,7 +171,12 @@ const IfcJsonExporter: React.FC<RelationTreeProps> = ({
 
             assignUniqueExpressIds(extendedElements, new Set());
 
+            extendedElements.forEach((element) => {
+                element.quantity = getElementQuantity(element.children);
+            });
+
             console.log('Extended Elements:', extendedElements);
+
 
             setTreeData(data);
 

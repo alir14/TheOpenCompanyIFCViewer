@@ -15,7 +15,7 @@
     "@mui/lab": "^6.0.0-beta.18",
     "@mui/material": "^6.1.10",
     "@mui/x-tree-view": "^7.23.0",
-    "@thatopen/components": "~2.4.0",
+    "@thatopen/components": "https://psiassetsapidev.blob.core.windows.net/npmpackages/thatopen-components-2.4.2.tgz",
     "camera-controls": "2.7.3",
     "dexie": "^4.0.4",
     "earcut": "^2.2.4",

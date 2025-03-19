@@ -18,6 +18,7 @@ import ClassificationsTreeComponent from './classifier/classifierExample';
 import IFCConsoleViewer from './elementPropertiesConsoleApp';
 import ElementPropertiesComponent from './elementProperties';
 import IfcJsonExporter from './IfcJsonExporter';
+import CustomPractice from './customPractice';
 
 const App: React.FC = () => {
     return (
@@ -38,8 +39,8 @@ const App: React.FC = () => {
             {/* <ClassificationsTreeComponent /> */}
             {/* <IFCConsoleViewer /> */}
             {/* <ElementPropertiesComponent /> */}
-            <IfcJsonExporter />
-
+            {/* <IfcJsonExporter /> */}
+            <CustomPractice />
         </div>
     );
 };

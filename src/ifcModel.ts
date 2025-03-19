@@ -25,5 +25,6 @@ export interface ElementNode {
     data: ElementData;
     children: ElementNode[];
     properties?: Property;
+    quantity?: number;
 }
 

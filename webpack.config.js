@@ -7,17 +7,23 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
     },
+    experiments: { asyncWebAssembly: true },
     module: {
         rules: [
             {
-                test: /\.(ts|tsx)$/,
+                test: /\.(js|jsx|ts|tsx)$/,
                 use: 'babel-loader',
                 exclude: /node_modules/
-            }
-        ]
+            },
+            {
+                test: /\.wasm$/,
+                type: "asset/resource",
+            },
+        ],
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js']
+        modules: [__dirname, "node_modules"],
+        extensions: ['.tsx', '.ts', '.js', 'jsx', '.wasm']
     },
     plugins: [
         new HtmlWebpackPlugin({
